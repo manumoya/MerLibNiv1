@@ -203,28 +203,32 @@ public class Mutant {
         /* Imprime matriz  */
         printMatriz(arr, lenghMatriz);
 
-        /* Cuenta secuencia horizontal  */
+        /* ***************************************************
+        * EVALUA RESULTADOS PARA DETERMINAR SI ES MUTANTE O NO
+        * *****************************************************/
+
+        /* Evalúa secuencia horizontal  */
         int totalSecuenceHoriz=0;
         totalSecuenceHoriz = countSecuenceHoriz(arr, lenghMatriz);
         if (totalSecuenceHoriz>1){
             //return true;
         }
 
-        /* Cuenta secuencia vertical  */
+        /* Evalúa secuencia vertical  */
         int totSecuenceVert=0;
         totSecuenceVert = countSecuenceVert(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert)>1){
             //return true;
         }
 
-        /* Cuenta secuencia diagonal IZQ => DER */
+        /* Evalúa secuencia diagonal IZQ => DER */
         int totalSecuenceDiagIzqDer=0;
         totalSecuenceDiagIzqDer = countSecuenceDiagIzqDer(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer)>1){
             //return true;
         }
 
-        /* Cuenta secuencia diagonal DER = IZQ */
+        /* Evalúa secuencia diagonal DER = IZQ */
         int totalSecuenceDiagDerIzq=0;
         totalSecuenceDiagDerIzq = countSecuenceDiagDerIzq(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer+totalSecuenceDiagIzqDer)>1){
