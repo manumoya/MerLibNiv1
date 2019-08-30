@@ -69,23 +69,7 @@ public class Mutant {
 
         /* Valida secuencia vertical  */
         int totSecuenceVert=0;
-        totalSecuenceHoriz = countSecuenceVert(arr, lenghMatriz);
-        /*for (int j = 0; j < lenghMatriz; j++) {
-            for (int i = 0; i < lenghMatriz; i++) {
-                if (lenghMatriz-i>=4) {
-                    if (arr[i][j] == arr[i+1][j] &&
-                            arr[i][j] == arr[i+2][j] &&
-                            arr[i][j] == arr[i+3][j]
-                    ) {
-                        countSecuenceVert++;
-                        i = i + 3;
-                    }
-                }
-            }
-        }
-        System.out.println("Secuencias Verti: "+  countSecuenceVert);
-        */
-
+        
 
         /* Valida secuencia diagonal IZQ => DER */
 
