@@ -111,10 +111,13 @@ public class Mutant {
         for (int indJ = lenghMatriz-1; indJ >= 0; indJ--) {
             i=0;
             j=indJ;
-            //System.out.println("Largo: " + (lenghMatriz-indJ));
-            if (lenghMatriz-indJ<=3) {
+            //System.out.println("Largo: " + (indJ) );
+            //if (lenghMatriz-indJ<=3) {
+            if (indJ>=3) {
                 while (j >= 0) {
-                    if (lenghMatriz-j<=3) {
+                    //System.out.println("LargoII : "+  (lenghMatriz-i));
+                    //if (lenghMatriz-j>=3) {
+                    if (lenghMatriz-i>=4) {
                         if (arr[i][j] == arr[i+1][j-1] &&
                                 arr[i][j] == arr[i+2][j-2] &&
                                 arr[i][j] == arr[i+3][j-3]
@@ -136,10 +139,10 @@ public class Mutant {
         for (int indI=1; indI<=lenghMatriz-1; indI++) {
             i=indI;
             j=lenghMatriz-1;
-            System.out.println("Largo: " + (lenghMatriz-indI));
+            //System.out.println("Largo: " + (lenghMatriz-indI));
             if (lenghMatriz-indI>=3) {
                 while (i <= lenghMatriz-1) {
-                    System.out.println("LargoII: " + (lenghMatriz-i));
+                    //System.out.println("LargoII: " + (lenghMatriz-i));
 
                     if (lenghMatriz-i>=4) {
                         if (arr[i][j] == arr[i+1][j-1] &&
@@ -152,14 +155,14 @@ public class Mutant {
                         }
                     }
 
-                    System.out.println("Val: " + arr[i][j] + " - ["+ i +","+j+"]");
+                    //System.out.println("Val: " + arr[i][j] + " - ["+ i +","+j+"]");
                     i++;
                     j--;
                 }
-                System.out.println("");
+                //System.out.println("");
             }
         }
-        System.out.println("Secuencias  Der = Izq: " + countSecuenceDiagDerIzq);
+        System.out.println("Secuencias  Der => Izq: " + countSecuenceDiagDerIzq);
         return countSecuenceDiagDerIzq;
     }
 
@@ -201,7 +204,9 @@ public class Mutant {
         /* Valida secuencia diagonal DER = IZQ */
         int totalSecuenceDiagDerIzq=0;
         totalSecuenceDiagIzqDer = countSecuenceDiagDerIzq(arr, lenghMatriz);
-
+        if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer+totalSecuenceDiagIzqDer)>1){
+            //return true;
+        }
 
         return false;
     }
@@ -213,7 +218,8 @@ public class Mutant {
         //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCCTG","TCACTG"};
         //String[] dna = {"ATGAAA","AGGGGC","CTATGG","ACAAGG","CCCCTG","TCACTG"};
         //String[] dna = {"ATGAAA","AGAAAG","CAGATG","ACATGA","CCTGCC","TTGATA"};
-        String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCGTG","TCGATG"};
+        //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCGTG","TCGATG"};
+        String[] dna = {"AAAA","AAAT","AAAG","ACCA"};
 
         System.out.println ( isMutant(dna) );
 
