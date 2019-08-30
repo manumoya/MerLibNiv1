@@ -66,27 +66,11 @@ public class Mutant {
         /* Valida secuencia horizontal  */
         int totalSecuenceHoriz=0;
         totalSecuenceHoriz = countSecuenceHoriz(arr, lenghMatriz);
-        /*
-        for (int i = 0; i < lenghMatriz; i++) {
-            for (int j = 0; j < lenghMatriz; j++) {
-                if (lenghMatriz-j>=4) {
-                    if (arr[i][j] == arr[i][j+ 1] &&
-                            arr[i][j] == arr[i][j + 2] &&
-                            arr[i][j] == arr[i][j + 3]
-                    ) {
-                        countSecuenceHoriz++;
-                        j = j + 3;
-                    }
-                }
-            }
-        }
-        System.out.println("Secuencias Horiz: "+  countSecuenceHoriz);
-        */
-
 
         /* Valida secuencia vertical  */
-        int countSecuenceVert=0;
-        for (int j = 0; j < lenghMatriz; j++) {
+        int totSecuenceVert=0;
+        totalSecuenceHoriz = countSecuenceVert(arr, lenghMatriz);
+        /*for (int j = 0; j < lenghMatriz; j++) {
             for (int i = 0; i < lenghMatriz; i++) {
                 if (lenghMatriz-i>=4) {
                     if (arr[i][j] == arr[i+1][j] &&
@@ -100,6 +84,7 @@ public class Mutant {
             }
         }
         System.out.println("Secuencias Verti: "+  countSecuenceVert);
+        */
 
 
         /* Valida secuencia diagonal IZQ => DER */
