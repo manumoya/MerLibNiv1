@@ -113,22 +113,25 @@ public class Mutant {
         return countSecuenceDiagIzqDer;
     }
 
-    /* Cuenta secuencia Diag DER => IZQ*/
+    /* Cuenta secuencia Diag DER => IZQ */
     static int countSecuenceDiagDerIzq (char[][] arr, int lenghMatriz){
         int i;
         int j;
         int countSecuenceDiagDerIzq=0;
 
-        /* Cuenta secuencia en diagonal superior de matriz*/
+        /* Cuenta secuencia en diagonal superior de matriz de Derecha a IZQ (como se visualizan las X)
+        *
+        *           X X X X X
+        *           - X X X X
+        *           - - X X X
+        *           - - - X X
+        *           - - - - X
+        * */
         for (int indJ = lenghMatriz-1; indJ >= 0; indJ--) {
             i=0;
             j=indJ;
-            //System.out.println("Largo: " + (indJ) );
-            //if (lenghMatriz-indJ<=3) {
             if (indJ>=3) {
                 while (j >= 0) {
-                    //System.out.println("LargoII : "+  (lenghMatriz-i));
-                    //if (lenghMatriz-j>=3) {
                     if (lenghMatriz-i>=4) {
                         if (arr[i][j] == arr[i+1][j-1] &&
                                 arr[i][j] == arr[i+2][j-2] &&
@@ -139,23 +142,26 @@ public class Mutant {
                             j=j-3 ;
                         }
                     }
-                    //System.out.println("Val: " + arr[i][j] + " - ["+ i +","+j+"]");
                     i++;
                     j--;
                 }
-                //System.out.println("");
             }
         }
 
-        /* Cuenta secuencia en diagonal inferior de matriz*/
+        /* Cuenta secuencia en diagonal inferior de matriz
+        *
+        *            X X X X X
+        *           - X X X X
+        *           - - X X X
+        *           - - - X X
+        *           - - - - X
+        *
+        * */
         for (int indI=1; indI<=lenghMatriz-1; indI++) {
             i=indI;
             j=lenghMatriz-1;
-            //System.out.println("Largo: " + (lenghMatriz-indI));
             if (lenghMatriz-indI>=3) {
                 while (i <= lenghMatriz-1) {
-                    //System.out.println("LargoII: " + (lenghMatriz-i));
-
                     if (lenghMatriz-i>=4) {
                         if (arr[i][j] == arr[i+1][j-1] &&
                                 arr[i][j] == arr[i+2][j-2] &&
@@ -167,11 +173,9 @@ public class Mutant {
                         }
                     }
 
-                    //System.out.println("Val: " + arr[i][j] + " - ["+ i +","+j+"]");
                     i++;
                     j--;
                 }
-                //System.out.println("");
             }
         }
         System.out.println("Secuencias  Der => Izq: " + countSecuenceDiagDerIzq);
@@ -186,28 +190,28 @@ public class Mutant {
         /* Imprime matriz  */
         printMatriz(arr, lenghMatriz);
 
-        /* Valida secuencia horizontal  */
+        /* Cuenta secuencia horizontal  */
         int totalSecuenceHoriz=0;
         totalSecuenceHoriz = countSecuenceHoriz(arr, lenghMatriz);
         if (totalSecuenceHoriz>1){
             //return true;
         }
 
-        /* Valida secuencia vertical  */
+        /* Cuenta secuencia vertical  */
         int totSecuenceVert=0;
         totSecuenceVert = countSecuenceVert(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert)>1){
             //return true;
         }
 
-        /* Valida secuencia diagonal IZQ => DER */
+        /* Cuenta secuencia diagonal IZQ => DER */
         int totalSecuenceDiagIzqDer=0;
         totalSecuenceDiagIzqDer = countSecuenceDiagIzqDer(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer)>1){
             //return true;
         }
 
-        /* Valida secuencia diagonal DER = IZQ */
+        /* Cuenta secuencia diagonal DER = IZQ */
         int totalSecuenceDiagDerIzq=0;
         totalSecuenceDiagDerIzq = countSecuenceDiagDerIzq(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer+totalSecuenceDiagIzqDer)>1){
