@@ -40,7 +40,7 @@ public class Mutant {
         return countSecuenceHoriz;
     }
 
-    /* Cuenta secuencia Horizontal*/
+    /* Cuenta secuencia de forma Vertical*/
     static int countSecuenceVert (char[][] arr, int lenghMatriz){
         int countSecuenceVert=0;
         for (int i = 0; i < lenghMatriz; i++) {
@@ -66,7 +66,14 @@ public class Mutant {
         int j;
         int countSecuenceDiagIzqDer=0;
 
-        /* Cuenta secuencia en diagonal superior de matriz*/
+        /* Cuenta secuencia en diagonal superior de matriz (IZQ a DER)
+        *
+        *   Ej:     X X X X X
+        *           X X X X -
+        *           X X X - -
+        *           X X - - -
+        *           X - - - -
+        * */
         for (int indJ = 0; indJ < lenghMatriz; indJ++) {
             i=0;
             j=indJ;
@@ -88,7 +95,15 @@ public class Mutant {
             }
         }
 
-        /* Cuenta secuencia en diagonal inferior de matriz*/
+        /* Cuenta secuencia en diagonal inferior de matriz(IZQ a DER)
+        *
+        *   Ej:     - - - - -
+        *           - - - - X
+        *           - - - X X
+        *           - - X X X
+        *           - X X X X
+        * */
+
         for (int indI = 1; indI < lenghMatriz; indI++) {
             j=0;
             i=indI;
@@ -96,8 +111,8 @@ public class Mutant {
                 while (i < lenghMatriz ) {
                     if (lenghMatriz-i>=4) {
                         if (arr[i][j] == arr[i+1][j+1] &&
-                                arr[i][j] == arr[i+2][j+2] &&
-                                arr[i][j] == arr[i+3][j+3]
+                            arr[i][j] == arr[i+2][j+2] &&
+                            arr[i][j] == arr[i+3][j+3]
                         ) {
                             countSecuenceDiagIzqDer++;
                             i = i + 3;
@@ -121,7 +136,7 @@ public class Mutant {
 
         /* Cuenta secuencia en diagonal superior de matriz de Derecha a IZQ (como se visualizan las X)
         *
-        *           X X X X X
+        *     Ej:   X X X X X
         *           - X X X X
         *           - - X X X
         *           - - - X X
@@ -134,8 +149,8 @@ public class Mutant {
                 while (j >= 0) {
                     if (lenghMatriz-i>=4) {
                         if (arr[i][j] == arr[i+1][j-1] &&
-                                arr[i][j] == arr[i+2][j-2] &&
-                                arr[i][j] == arr[i+3][j-3]
+                            arr[i][j] == arr[i+2][j-2] &&
+                            arr[i][j] == arr[i+3][j-3]
                         ) {
                             countSecuenceDiagDerIzq++;
                             i=i+3;
@@ -148,14 +163,13 @@ public class Mutant {
             }
         }
 
-        /* Cuenta secuencia en diagonal inferior de matriz
+        /* Cuenta secuencia en diagonal inferior de matriz (DER a IZQ)
         *
-        *            X X X X X
-        *           - X X X X
-        *           - - X X X
-        *           - - - X X
-        *           - - - - X
-        *
+        *      Ej:  - - - - -
+        *           X - - - -
+        *           X X - - -
+        *           X X X - -
+        *           X X X X -
         * */
         for (int indI=1; indI<=lenghMatriz-1; indI++) {
             i=indI;
@@ -172,7 +186,6 @@ public class Mutant {
                             j=j-3 ;
                         }
                     }
-
                     i++;
                     j--;
                 }
