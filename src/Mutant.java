@@ -8,6 +8,18 @@ public class Mutant {
         }
     }
 
+    /* Print matriz con DNA */
+    static void printMatriz (char[][] arr, int largoMatriz){
+        //int lenghMatriz = dna.length;
+        for (int i = 0; i < largoMatriz; i++) {
+            for (int j = 0; j < largoMatriz; j++) {
+                System.out.print(arr[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+
     /* Cuenta secuencia Horizontal*/
     static int countSecuenceHoriz (char[][] arr, int lenghMatriz){
         int countSecuenceHoriz=0;
@@ -167,18 +179,12 @@ public class Mutant {
     }
 
     static boolean isMutant(String[] dna){
-
         int lenghMatriz = dna.length;
-        char arr [][] = new char[lenghMatriz][lenghMatriz];
+        char[][] arr = new char[lenghMatriz][lenghMatriz];
         completeMatriz(arr,dna);
 
         /* Imprime matriz  */
-        for (int i = 0; i < lenghMatriz; i++) {
-            for (int j = 0; j < lenghMatriz; j++) {
-                System.out.print(arr[i][j]);
-            }
-            System.out.println("");
-        }
+        printMatriz(arr, lenghMatriz);
 
         /* Valida secuencia horizontal  */
         int totalSecuenceHoriz=0;
@@ -203,7 +209,7 @@ public class Mutant {
 
         /* Valida secuencia diagonal DER = IZQ */
         int totalSecuenceDiagDerIzq=0;
-        totalSecuenceDiagIzqDer = countSecuenceDiagDerIzq(arr, lenghMatriz);
+        totalSecuenceDiagDerIzq = countSecuenceDiagDerIzq(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer+totalSecuenceDiagIzqDer)>1){
             //return true;
         }
@@ -219,10 +225,10 @@ public class Mutant {
         //String[] dna = {"ATGAAA","AGGGGC","CTATGG","ACAAGG","CCCCTG","TCACTG"};
         //String[] dna = {"ATGAAA","AGAAAG","CAGATG","ACATGA","CCTGCC","TTGATA"};
         //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCGTG","TCGATG"};
-        String[] dna = {"AAAA","AAAT","AAAG","ACCA"};
+        //String[] dna = {"AAAA","AAAT","AAAG","ACCA"};
+        String[] dna = {"ATAAA","AGGGG","ATGGG","AGGGG","CGCGG"};
 
         System.out.println ( isMutant(dna) );
 
     }
-
 }
