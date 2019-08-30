@@ -1,12 +1,46 @@
 public class Mutant {
 
     /* Completa matriz con DNA */
-    static void completeMatriz (char[][] arr, String[] dna ){
+    static boolean completeMatriz (char[][] arr, String[] dna ){
         int lenghMatriz = dna.length;
         for (int i = 0; i < lenghMatriz; i++) {
-            arr[i] = dna[i].toCharArray();
+            char [] dnaSimple = dna[i].toCharArray();
+            if (dnaSimple.length!=lenghMatriz){
+                System.out.println("Error en matriz DNA!!!! => Debe ser  NxN (N >= 4)");
+                return false;
+            }
+            if (!valideLetter(dnaSimple)){
+                System.out.println("Error en  DNA!!!! => Letras no corresponden (deben ser A, T, C o G)");
+                return false;
+            }
+            arr[i] = dnaSimple;
+        }
+        return true;
+    }
+
+    /* Valida que las letras sean las correctas*/
+    static boolean valideLetter(char [] dnaSimple){
+        int largo = dnaSimple.length;
+        for (int i = 0; i < largo; i++) {
+            //System.out.println(dnaSimple[i]);
+            if (dnaSimple[i]!='A' && dnaSimple[i]!='T' && dnaSimple[i]!='C' && dnaSimple[i]!='G'){
+                return false;
+            }
+            //System.out.println("");
+        }
+        return true;
+    }
+
+    /*
+    static void validaMatriz (char[][] arr, int largoMatriz){
+        for (int i = 0; i < lenghMatriz; i++) {
+            for (int j = 0; j < lenghMatriz; j++) {
+                arr[i] = dna[i].toCharArray();
+            }
         }
     }
+    */
+
 
     /* Print matriz con DNA */
     static void printMatriz (char[][] arr, int largoMatriz){
@@ -198,7 +232,9 @@ public class Mutant {
     static boolean isMutant(String[] dna){
         int lenghMatriz = dna.length;
         char[][] arr = new char[lenghMatriz][lenghMatriz];
-        completeMatriz(arr,dna);
+        if (!completeMatriz(arr,dna)){
+            return false;
+        }
 
         /* Imprime matriz  */
         printMatriz(arr, lenghMatriz);
@@ -248,6 +284,11 @@ public class Mutant {
         //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCGTG","TCGATG"};
         //String[] dna = {"AAAA","AAAT","AAAG","ACCA"};
         String[] dna = {"ATAAA","AGGGG","ATGGG","AGGGG","CGCGG"};
+
+        /* ==== Validaciones de entrada ==== */
+
+        //String[] dna = {"AAAA","AAAT","AAAG"};
+        //String[] dna = {"ATAA ","AGGGG","ATGGG","AGGGG","CGCGG"};
 
         System.out.println ( isMutant(dna) );
 
