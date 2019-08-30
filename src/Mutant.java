@@ -283,7 +283,12 @@ public class Mutant {
         //String[] dna = {"ATGAAA","AGAAAG","CAGATG","ACATGA","CCTGCC","TTGATA"};
         //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCGTG","TCGATG"};
         //String[] dna = {"AAAA","AAAT","AAAG","ACCA"};
-        String[] dna = {"ATAAA","AGGGG","ATGGG","AGGGG","CGCGG"};
+
+
+        //String[] dna = {"ATAAA","AGGGG","ATGGG","AGGGG","CGCGG"};
+
+        String input = "ATAAA,AGGGG,ATGGG,AGGGG,CGCGG";
+        String[] dna = input.split(",");
 
         /* ==== Validaciones de entrada ==== */
 
