@@ -1,8 +1,8 @@
 # Ejercicio MercadoLibre Nivel 1 (Agosto 2019)
-######Autor: [Manuel Moya - mmoyam@gmail.com]
+###### Autor: [Manuel Moya - mmoyam@gmail.com]
 El objetivo de este documento es detallar la resolución del caso MercadoLibre, donde se debe diseñar un algortimo que detecte mutantes basados su secuencia de ADN que será entregado.
 
-##Enunciado
+## Enunciado
 
 Para lo anterior se debe crear un programa con un método o función con la siguiente firma:
  
@@ -13,7 +13,7 @@ de (NxN) con la secuencia del ADN.
 * Las letras de los Strings solo pueden ser: (A,T,C,G), las
 cuales representa cada base nitrogenada del ADN.
 
-##Entregable
+## Entregable
 
 Programa (java) que cumpla con el método solicitado
 
