@@ -4,9 +4,9 @@ El objetivo de este documento es detallar la resolución del caso MercadoLibre, 
 
 ### Enunciado
 
-Para lo anterior se debe crear un programa con un método o función con la siguiente firma:
- 
-**boolean isMutant(String[] dna);**
+* Crear un programa con un método o función con la siguiente firma:
+
+	**boolean isMutant(String[] dna);**
 
 * En donde recibirás como parámetro un array de Strings que representan cada fila de una tabla
 de (NxN) con la secuencia del ADN. 
@@ -14,7 +14,9 @@ de (NxN) con la secuencia del ADN.
 cuales representa cada base nitrogenada del ADN.
 * Un humano es mutante, si encuentras más de una secuencia de cuatro letras iguales​, de forma oblicua, horizontal o vertical.
 * Ejemplo (Caso mutante):
-**String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};**
+
+	**String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};**
+
 * En este caso el llamado a la función isMutant(dna) devuelve “true”.
 
 ### Entregable
