@@ -38,7 +38,7 @@ Programa (java) que cumpla con el método solicitado
 Usar programación dinámica para dividir en subproblemas, es decir, 
 
 * Recorrer toda la matriz y evaluar secuencias de adn (horizontal, vertica o diagonal) para cada posición
-* Cada posición que resuelva una secuancia evaluar si llegó a la solución.
+* En cada posición que resuelva una secuancia, evaluar si llegó a la solución final.
 
 ### Consideraciones
 
