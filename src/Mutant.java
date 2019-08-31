@@ -261,6 +261,7 @@ public class Mutant {
         return countSecuenceDiagDerIzq;
     }
 
+    /* Evalua si es mutante o no */
     static boolean isMutant(String[] dna){
         int lenghMatriz = dna.length;
         char[][] arr = new char[lenghMatriz][lenghMatriz];
