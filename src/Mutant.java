@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Mutant {
 
     /* Completa matriz con DNA */
@@ -66,6 +68,11 @@ public class Mutant {
                     ) {
                         countSecuenceHoriz++;
                         j = j + 3;
+                        /* Acelera la busqueda de la solución*/
+                        if (countSecuenceHoriz>1){
+                            System.out.println("Secuencias Horiz Acel: "+  countSecuenceHoriz);
+                            return (countSecuenceHoriz);
+                        }
                     }
                 }
             }
@@ -86,6 +93,11 @@ public class Mutant {
                     ) {
                         countSecuenceVert++;
                         j = j + 3;
+                        /* Acelera la busqueda de la solución*/
+                        if (countSecuenceVert>1){
+                            System.out.println("Secuencias Vertical Acel: "+  countSecuenceVert);
+                            return (countSecuenceVert);
+                        }
                     }
                 }
             }
@@ -121,6 +133,11 @@ public class Mutant {
                             countSecuenceDiagIzqDer++;
                             i = i + 3;
                             j=i;
+                            /* Acelera la busqueda de la solución*/
+                            if (countSecuenceDiagIzqDer>1){
+                                System.out.println("Secuencias Izq => Der Acel: "+  countSecuenceDiagIzqDer);
+                                return (countSecuenceDiagIzqDer);
+                            }
                         }
                     }
                     i++;
@@ -151,6 +168,11 @@ public class Mutant {
                             countSecuenceDiagIzqDer++;
                             i = i + 3;
                             j=i;
+                            /* Acelera la busqueda de la solución*/
+                            if (countSecuenceDiagIzqDer>1){
+                                System.out.println("Secuencias Izq => Der Acel: "+  countSecuenceDiagIzqDer);
+                                return (countSecuenceDiagIzqDer);
+                            }
                         }
                     }
                     i++;
@@ -189,6 +211,11 @@ public class Mutant {
                             countSecuenceDiagDerIzq++;
                             i=i+3;
                             j=j-3 ;
+                            /* Acelera la busqueda de la solución*/
+                            if (countSecuenceDiagDerIzq>1){
+                                System.out.println("Secuencias Der => Izq Acel: "+  countSecuenceDiagDerIzq);
+                                return (countSecuenceDiagDerIzq);
+                            }
                         }
                     }
                     i++;
@@ -217,7 +244,12 @@ public class Mutant {
                         ) {
                             countSecuenceDiagDerIzq++;
                             i=i+3;
-                            j=j-3 ;
+                            j=j-3;
+                            /* Acelera la busqueda de la solución*/
+                            if (countSecuenceDiagDerIzq>1){
+                                System.out.println("Secuencias Der => Izq Acel: "+  countSecuenceDiagDerIzq);
+                                return (countSecuenceDiagDerIzq);
+                            }
                         }
                     }
                     i++;
@@ -275,20 +307,15 @@ public class Mutant {
     }
 
     public static void main(String[] args) {
-        //String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
         //String[] dna = {"ATGAAA","AGGGGC","ATATGG","AGAAGG","CCCCTG","TCACTG"};
+        //String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"};
 
-        //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCCTG","TCACTG"};
-        //String[] dna = {"ATGAAA","AGGGGC","CTATGG","ACAAGG","CCCCTG","TCACTG"};
-        //String[] dna = {"ATGAAA","AGAAAG","CAGATG","ACATGA","CCTGCC","TTGATA"};
+        //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCCTG","TCACTG"}; // 1
+        //String[] dna = {"ATGAAA","AGGGGC","CTATGG","ACAAGG","CCCCTG","TCACTG"}; // 2
+        String[] dna = {"ATGAAA","AGAAAG","CAGATG","ACATGA","CCTGCC","TTGATA"}; // 3
         //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCGTG","TCGATG"};
-        //String[] dna = {"AAAA","AAAT","AAAG","ACCA"};
-
-
-        //String[] dna = {"ATAAA","AGGGG","ATGGG","AGGGG","CGCGG"};
-
-        String input = "ATAAA,AGGGG,ATGGG,AGGGG,CGCGG";
-        String[] dna = input.split(",");
+        //String[] dna = {"AAAA","AAAT","AAAG","ACCA"}; // 5
+        //String[] dna = {"ATAAA","AGGGG","ATGGG","AGGGG","CGCGG"}; // 6
 
         /* ==== Validaciones de entrada ==== */
 
@@ -296,6 +323,15 @@ public class Mutant {
         //String[] dna = {"ATAA ","AGGGG","ATGGG","AGGGG","CGCGG"};
 
         System.out.println ( isMutant(dna) );
+
+        /*
+        Scanner scan = new Scanner(System.in);
+        String inputString = scan.nextLine();
+        scan.close();
+        // ejemplo inputString = "ATAAA,AGGGG,ATGGG,AGGGG,CGCGG";
+        String[] dna = inputString.split(",");
+        System.out.println ( isMutant(dna) );
+        */
 
     }
 }
