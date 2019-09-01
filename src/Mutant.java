@@ -273,6 +273,59 @@ public class Mutant {
         return countSecuenceDiagDerIzq;
     }
 
+    /* busca diagonal de IZQ a DER*/
+    static int searchDiagIzqDer(char[][] arr, int lenghMatriz, int i, int j, String indLimit){
+        int contSecuencia =0;
+        int limit=0;
+        while (i<=lenghMatriz-1 && j<=lenghMatriz-1){
+            if (indLimit == "J"){
+                limit=lenghMatriz-j;
+            }else{
+                limit=lenghMatriz-i;
+            }
+            if (limit>=4) {
+                //System.out.println("Val=  " + arr[i][j] + " [" + i + "][" + j + "] = " + (limit));
+                if (arr[i][j] == arr[i+1][j+1] &&
+                        arr[i][j] == arr[i+2][j+2] &&
+                        arr[i][j] == arr[i+3][j+3]
+                ) {
+                    contSecuencia++;
+                }
+            }
+            i++;
+            j++;
+        }
+        //System.out.println("total Sec 2= "+ contSecuencia);
+        return contSecuencia;
+    }
+
+    static int countSecuenceDiagIzqDer2 (char[][] arr, int lenghMatriz){
+        int i=0;
+        int j=0;
+        int countSecuence=0;
+        for (int indI = lenghMatriz-1; indI >= 0; indI--) {
+            //i=indI;
+            if (indI==0){
+                for (int indJ = 0; indJ < lenghMatriz; indJ++) { // busca desde [0,n]
+                    i=indI;
+                    j=indJ;
+
+                    int cont = searchDiagIzqDer(arr, lenghMatriz, i, j, "J");
+                    System.out.println("Busca 1 desde ["+i+"]["+j+"] = " + cont );
+                    countSecuence = countSecuence + cont;
+                }
+            }else{ // busca desde [n,0]
+                i=indI;
+                //j=indJ;
+                int cont = searchDiagIzqDer(arr, lenghMatriz, i, j, "I");
+                System.out.println("Busca 2 desde ["+i+"]["+j+"] = "+ cont);
+                countSecuence = countSecuence + cont;
+            }
+        }
+        System.out.println("Cont Sec 2= "+ countSecuence);
+        return countSecuence;
+    }
+
     /* Evalua si es mutante o no */
     static boolean isMutant(String[] dna){
         int lenghMatriz = dna.length;
@@ -315,6 +368,9 @@ public class Mutant {
         if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer+totalSecuenceDiagIzqDer)>1){
             //return true;
         }
+
+        int restultado = countSecuenceDiagIzqDer2(arr, lenghMatriz);
+
 
         return false;
     }
