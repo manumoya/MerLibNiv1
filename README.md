@@ -55,6 +55,9 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 * **isMutant(String[] dna)**: Evalúa si la secuencia de ADN es mutante o no.
 * **main(String[] args)**: Métodos principal de la ejecución del programa.
 
+### Ejecución del programa
+
+
 ### Análisis del programa
 * La solución se comporta según lo esperado para todos los casos de pruebas utilizados.
 * La complejidad de cada método es la que se indica a continuación, donde nxn = n^2
@@ -70,7 +73,7 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 * Por lo anterior la complejidad es: n^2 + n^2 + n^2 + n^2 + n^2 = 5n^2 = O(n^2). Logrando complejidad polinomial, que para este caso es cuadrática.
 
 ### Traza
-Los siguientes casos fueron probados en las pruebas
+Los siguientes casos fueron probados:
 
 |Caso 1 = true | Caso 2 = true | Caso 3 = true | Caso 4 = true |
 |---|---|---|---|
@@ -80,7 +83,7 @@ Los siguientes casos fueron probados en las pruebas
 | Caso 9 = false | Caso 10 = false | Caso 11 = false | Caso 12 = true |
 | ![](img/traza_caso9a.png) | ![](img/traza_caso10.png) | ![](img/traza_caso11.png) | ![](img/traza_caso12.png) |
 
-Los cuales se representan en el código:
+Los cuales se reflejan en el siguiente código:
 
 ![](img/casos_java.png)
 
