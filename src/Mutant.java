@@ -71,13 +71,13 @@ public class Mutant {
                         /* Acelera la busqueda de la solución*/
                         if (countSecuenceHoriz>1){
                             //System.out.println("Secuencias Horiz Acel: "+  countSecuenceHoriz);
-                            //return (countSecuenceHoriz);
+                            return (countSecuenceHoriz);
                         }
                     }
                 }
             }
         }
-        System.out.println("Secuencias Horiz: "+  countSecuenceHoriz);
+        //System.out.println("Secuencias Horiz: "+  countSecuenceHoriz);
         return countSecuenceHoriz;
     }
 
@@ -96,16 +96,15 @@ public class Mutant {
                         /* Acelera la busqueda de la solución*/
                         if (countSecuenceVert>1){
                             //System.out.println("Secuencias Vertical Acel: "+  countSecuenceVert);
-                            //return (countSecuenceVert);
+                            return (countSecuenceVert);
                         }
                     }
                 }
             }
         }
-        System.out.println("Secuencias Vertical: "+  countSecuenceVert);
+        //System.out.println("Secuencias Vertical: "+  countSecuenceVert);
         return countSecuenceVert;
     }
-
 
     /* Busca secuancia diagonal de IZQ a DER*/
     static int searchDiagIzqDer(char[][] arr, int lenghMatriz, int i, int j, String indLimit){
@@ -147,6 +146,7 @@ public class Mutant {
                     int cont = searchDiagIzqDer(arr, lenghMatriz, i, j, "J");
                     //System.out.println("Busca 1 desde ["+i+"]["+j+"] = " + cont );
                     countSecuence = countSecuence + cont;
+
                 }
             }else{ // busca desde [n,0]
                 i=indI;
@@ -154,8 +154,13 @@ public class Mutant {
                 //System.out.println("Busca 2 desde ["+i+"]["+j+"] = "+ cont);
                 countSecuence = countSecuence + cont;
             }
+            // Acelera busqueda de solución
+            if (countSecuence>1){
+                //System.out.println("Cont Sec IZQ a DER 2 Acel = "+ countSecuence);
+                return countSecuence;
+            }
         }
-        System.out.println("Cont Sec IZQ a DER 2= "+ countSecuence);
+        //System.out.println("Cont Sec IZQ a DER 2= "+ countSecuence);
         return countSecuence;
     }
 
@@ -205,8 +210,15 @@ public class Mutant {
                 //System.out.println("Busca 2 desde ["+i+"]["+j+"] = " + cont);
                 countSecuence = countSecuence + cont;
             }
+
+            // Acelera busqueda de solución
+            if (countSecuence>1){
+                // System.out.println("Cont Sec DER a IZQ 2 Acel = "+ countSecuence);
+                return countSecuence;
+            }
+
         }
-        System.out.println("Cont Sec DER a IZQ 2= "+ countSecuence);
+        //System.out.println("Cont Sec DER a IZQ 2= "+ countSecuence);
         return countSecuence;
     }
 
@@ -229,34 +241,31 @@ public class Mutant {
         int totalSecuenceHoriz=0;
         totalSecuenceHoriz = countSecuenceHoriz(arr, lenghMatriz);
         if (totalSecuenceHoriz>1){
-            //return true;
+            return true;
         }
 
-        /* Evalúa secuencia vertical  */
+        /* Evalúa secuencia vertical + horizontal  */
         int totSecuenceVert=0;
         totSecuenceVert = countSecuenceVert(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert)>1){
-            //return true;
+            return true;
         }
 
-        /* Evalúa secuencia diagonal IZQ => DER */
+        /* Evalúa secuencia horizontal + vertical + diagonal IZQ => DER */
         int totalSecuenceDiagIzqDer=0;
         totalSecuenceDiagIzqDer = countSecuenceDiagIzqDer(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer)>1){
-            //return true;
+            return true;
         }
 
-        /* Evalúa secuencia diagonal DER = IZQ */
+        /* Evalúa secuencia horizontal + vertical + diagonal IZQ => DER + diagonal DER => IZQ */
         int totalSecuenceDiagDerIzq=0;
         totalSecuenceDiagDerIzq = countSecuenceDiagDerIzq(arr, lenghMatriz);
         if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer+totalSecuenceDiagIzqDer)>1){
-            //return true;
+            return true;
         }
 
-        //int restultado = countSecuenceDiagIzqDer2(arr, lenghMatriz);
-        //int resultado2 = countSecuenceDiagDerIzq2(arr, lenghMatriz);
-
-
+        // Si noencuntra secuencia mutante
         return false;
     }
 
