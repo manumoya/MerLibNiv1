@@ -24,28 +24,15 @@ public class Mutant {
     static boolean valideLetter(char [] dnaSimple){
         int largo = dnaSimple.length;
         for (int i = 0; i < largo; i++) {
-            //System.out.println(dnaSimple[i]);
             if (dnaSimple[i]!='A' && dnaSimple[i]!='T' && dnaSimple[i]!='C' && dnaSimple[i]!='G'){
                 return false;
             }
-            //System.out.println("");
         }
         return true;
     }
 
-    /*
-    static void validaMatriz (char[][] arr, int largoMatriz){
-        for (int i = 0; i < lenghMatriz; i++) {
-            for (int j = 0; j < lenghMatriz; j++) {
-                arr[i] = dna[i].toCharArray();
-            }
-        }
-    }
-    */
-
     /* Print matriz con DNA */
     static void printMatriz (char[][] arr, int largoMatriz){
-        //int lenghMatriz = dna.length;
         for (int i = 0; i < largoMatriz; i++) {
             for (int j = 0; j < largoMatriz; j++) {
                 System.out.print(arr[i][j]);
@@ -68,14 +55,12 @@ public class Mutant {
                         j = j + 3;
                         /* Acelera la busqueda de la solución*/
                         if (countSecuenceHoriz>1){
-                            //System.out.println("Secuencias Horiz Acel: "+  countSecuenceHoriz);
                             return (countSecuenceHoriz);
                         }
                     }
                 }
             }
         }
-        //System.out.println("Secuencias Horiz: "+  countSecuenceHoriz);
         return countSecuenceHoriz;
     }
 
@@ -93,7 +78,6 @@ public class Mutant {
                         j = j + 3;
                         /* Acelera la busqueda de la solución*/
                         if (countSecuenceVert>1){
-                            //System.out.println("Secuencias Vertical Acel: "+  countSecuenceVert);
                             return (countSecuenceVert);
                         }
                     }
@@ -115,7 +99,6 @@ public class Mutant {
                 limit=lenghMatriz-i;
             }
             if (limit>=4) {
-                //System.out.println("Val=  " + arr[i][j] + " [" + i + "][" + j + "] = " + (limit));
                 if (arr[i][j] == arr[i+1][j+1] &&
                         arr[i][j] == arr[i+2][j+2] &&
                         arr[i][j] == arr[i+3][j+3]
@@ -126,7 +109,6 @@ public class Mutant {
             i++;
             j++;
         }
-        //System.out.println("total Sec 2= "+ contSecuencia);
         return contSecuencia;
     }
 
@@ -142,23 +124,18 @@ public class Mutant {
                     i=indI;
                     j=indJ;
                     int cont = searchDiagIzqDer(arr, lenghMatriz, i, j, "J");
-                    //System.out.println("Busca 1 desde ["+i+"]["+j+"] = " + cont );
                     countSecuence = countSecuence + cont;
-
                 }
             }else{ // busca desde [n,0]
                 i=indI;
                 int cont = searchDiagIzqDer(arr, lenghMatriz, i, j, "I");
-                //System.out.println("Busca 2 desde ["+i+"]["+j+"] = "+ cont);
                 countSecuence = countSecuence + cont;
             }
             // Acelera busqueda de solución
             if (countSecuence > 1){
-                //System.out.println("Cont Sec IZQ a DER 2 Acel = "+ countSecuence);
                 return countSecuence;
             }
         }
-        //System.out.println("Cont Sec IZQ a DER 2= "+ countSecuence);
         return countSecuence;
     }
 
@@ -172,7 +149,6 @@ public class Mutant {
             }else{
                 limit=lenghMatriz-i-1;
             }
-            //System.out.println("Val=  " + arr[i][j] + " [" + i + "][" + j + "] = " + limit );
             if (limit>=3) {
                 if (arr[i][j] == arr[i+1][j-1] &&
                         arr[i][j] == arr[i+2][j-2] &&
@@ -193,30 +169,25 @@ public class Mutant {
         int j=0;
         int countSecuence=0;
         for (int indJ = 0; indJ <= lenghMatriz-1; indJ++) {
-            //i=indI;
             if (indJ==lenghMatriz-1){
                 for (int indI = 0; indI <= lenghMatriz-1 ; indI++) { // busca desde [n,n]
                     i=indI;
                     j=indJ;
                     int cont = searchDiagDerIzq(arr, lenghMatriz, i, j, "I");
-                    //System.out.println("Busca 1 desde ["+i+"]["+j+"] = " + cont );
                     countSecuence = countSecuence + cont;
                 }
             }else{ // busca desde [0,n]
                 j=indJ;
                 int cont = searchDiagDerIzq(arr, lenghMatriz, i, j, "J");
-                //System.out.println("Busca 2 desde ["+i+"]["+j+"] = " + cont);
                 countSecuence = countSecuence + cont;
             }
 
             // Acelera busqueda de solución
             if (countSecuence > 1){
-                // System.out.println("Cont Sec DER a IZQ 2 Acel = "+ countSecuence);
                 return countSecuence;
             }
 
         }
-        //System.out.println("Cont Sec DER a IZQ 2= "+ countSecuence);
         return countSecuence;
     }
 
@@ -282,7 +253,6 @@ public class Mutant {
         //String[] dna = {"CTGATG","ACATTC","CAGTCT","CGAAGA","AGTTAG","TCGCAC"}; // 11
         String[] dna = {"TAAATCGG","AAAATTTT","TCAGTAGT","GAATTGAT","CCCCGGTT","AAAGTGAG","GAAAAGGG","TCTTTTAG"}; //12
 
-
         System.out.println ( isMutant(dna) );
 
         /*
@@ -293,6 +263,5 @@ public class Mutant {
         String[] dna = inputString.split(",");
         System.out.println ( isMutant(dna) );
         */
-
     }
 }
