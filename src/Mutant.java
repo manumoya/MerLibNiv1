@@ -309,20 +309,85 @@ public class Mutant {
                 for (int indJ = 0; indJ < lenghMatriz; indJ++) { // busca desde [0,n]
                     i=indI;
                     j=indJ;
-
                     int cont = searchDiagIzqDer(arr, lenghMatriz, i, j, "J");
-                    System.out.println("Busca 1 desde ["+i+"]["+j+"] = " + cont );
+                    //System.out.println("Busca 1 desde ["+i+"]["+j+"] = " + cont );
                     countSecuence = countSecuence + cont;
                 }
             }else{ // busca desde [n,0]
                 i=indI;
-                //j=indJ;
                 int cont = searchDiagIzqDer(arr, lenghMatriz, i, j, "I");
-                System.out.println("Busca 2 desde ["+i+"]["+j+"] = "+ cont);
+                //System.out.println("Busca 2 desde ["+i+"]["+j+"] = "+ cont);
                 countSecuence = countSecuence + cont;
             }
         }
-        System.out.println("Cont Sec 2= "+ countSecuence);
+        System.out.println("Cont Sec IZQ a DER 2= "+ countSecuence);
+        return countSecuence;
+    }
+
+    /* busca diagonal de DER a IZq*/
+    static int searchDiagDerIzq(char[][] arr, int lenghMatriz, int i, int j, String indLimit){
+        int contSecuencia =0;
+        int limit=0;
+        while (i<=lenghMatriz-1 && j>=0){
+            if (indLimit == "J"){
+                limit=j;
+            }else{
+                limit=lenghMatriz-i-1;
+            }
+
+            //System.out.println("Val=  " + arr[i][j] + " [" + i + "][" + j + "] = " + limit );
+
+
+            if (limit>=3) {
+                if (arr[i][j] == arr[i+1][j-1] &&
+                        arr[i][j] == arr[i+2][j-2] &&
+                        arr[i][j] == arr[i+3][j-3]
+                ) {
+                    contSecuencia++;
+                }
+
+            }
+
+
+            i++;
+            j--;
+        }
+       // System.out.println("");
+        //System.out.println("total Sec 2= "+ contSecuencia);
+        return contSecuencia;
+    }
+
+    static int countSecuenceDiagDerIzq2 (char[][] arr, int lenghMatriz){
+        int i=0;
+        int j=0;
+        int countSecuence=0;
+        for (int indJ = 0; indJ <= lenghMatriz-1; indJ++) {
+            //i=indI;
+            if (indJ==lenghMatriz-1){
+                for (int indI = 0; indI <= lenghMatriz-1 ; indI++) { // busca desde [n,n]
+                    i=indI;
+                    j=indJ;
+
+
+                    int cont = searchDiagDerIzq(arr, lenghMatriz, i, j, "I");
+                    System.out.println("Busca 1 desde ["+i+"]["+j+"] = " + cont );
+                    //int cont=0;
+                    countSecuence = countSecuence + cont;
+                }
+            }else{ // busca desde [0,n]
+                j=indJ;
+
+
+                int cont = searchDiagDerIzq(arr, lenghMatriz, i, j, "J");
+                System.out.println("Busca 2 desde ["+i+"]["+j+"] = " + cont);
+
+
+                //int cont=0;
+
+                countSecuence = countSecuence + cont;
+            }
+        }
+        System.out.println("Cont Sec DER a IZQ 2= "+ countSecuence);
         return countSecuence;
     }
 
@@ -369,7 +434,8 @@ public class Mutant {
             //return true;
         }
 
-        int restultado = countSecuenceDiagIzqDer2(arr, lenghMatriz);
+        //int restultado = countSecuenceDiagIzqDer2(arr, lenghMatriz);
+        int resultado2 = countSecuenceDiagDerIzq2(arr, lenghMatriz);
 
 
         return false;
