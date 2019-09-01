@@ -74,11 +74,11 @@ Los siguientes casos fueron probados en las pruebas
 
 |Caso 1 = true | Caso 2 = true | Caso 3 = true | Caso 4 = true |
 |---|---|---|---|
-| ![](img/traza_caso1.png)  | <img src="img/traza_caso2.png" width="100" height=="100"/> | <img src="img/traza_caso3.png" width="100" height=="100"/> | <img src="img/traza_caso4.png" width="100" height=="100"/> |
+| ![](img/traza_caso1.png) | ![](img/traza_caso2.png) | ![](img/traza_caso3.png) | ![](img/traza_caso4.png) |
 |Caso 5 = true| Caso 6 = true | Caso 7 = true | Caso 8 = false |
-| ![](img/traza_caso5.png =100x100) | ![](img/traza_caso6.png =100x100) | ![](img/traza_caso7.png =100x100) | ![](img/traza_caso8.png =100x100) |
+| ![](img/traza_caso5a.png) | ![](img/traza_caso6.png) | ![](img/traza_caso7.png) | ![](img/traza_caso8.png) |
 | Caso 9 = false | Caso 10 = false | Caso 11 = false | Caso 12 = true |
-| ![](img/traza_caso9.png =100x100) | ![](img/traza_caso10.png =100x100) | ![](img/traza_caso11.png =100x100) | ![](img/traza_caso12.png =100x100) |
+| ![](img/traza_caso9a.png) | ![](img/traza_caso10.png) | ![](img/traza_caso11.png) | ![](img/traza_caso12.png) |
 
 Los cuales se representan en el código:
 
