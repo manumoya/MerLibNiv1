@@ -328,10 +328,6 @@ public class Mutant {
         //String[] dna = {"AAAA","AAAT","AAAG","ACCA"}; // 5
         //String[] dna = {"ATAAA","AGGGG","ATGGG","AGGGG","CGCTG"}; // 6
         //String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"}; // 7
-
-
-        /* ==== Validaciones de entrada ==== */
-
         //String[] dna = {"AAAA","AAAT","AAAG"}; // 8
         //String[] dna = {"ATAAR","AGGGG","ATGGG","AGGGG","CGCGG"}; // 9
         //String[] dna = {"ATA","AGG","ATG"}; // 10
