@@ -106,174 +106,8 @@ public class Mutant {
         return countSecuenceVert;
     }
 
-    /* Cuenta secuencia Diag IZQ => DER*/
-    static int countSecuenceDiagIzqDer (char[][] arr, int lenghMatriz){
-        int i;
-        int j;
-        int countSecuenceDiagIzqDer=0;
 
-        /* Cuenta secuencia en diagonal superior de matriz (IZQ a DER)
-        *
-        *   Ej:     X X X X X
-        *           X X X X -
-        *           X X X - -
-        *           X X - - -
-        *           X - - - -
-        * */
-        for (int indJ = 0; indJ < lenghMatriz; indJ++) {
-            i=0;
-            j=indJ;
-            if (lenghMatriz-indJ>=4) {
-                while (j < lenghMatriz) {
-                    if (lenghMatriz-j>=4) {
-                        if (arr[i][j] == arr[i+1][j+1] &&
-                                arr[i][j] == arr[i+2][j+2] &&
-                                arr[i][j] == arr[i+3][j+3]
-                        ) {
-                            countSecuenceDiagIzqDer++;
-                            i = i + 3;
-                            j=i;
-                            /* Acelera la busqueda de la solución*/
-                            if (countSecuenceDiagIzqDer>1){
-                                //System.out.println("Secuencias Izq => Der Acel: "+  countSecuenceDiagIzqDer);
-                                //return (countSecuenceDiagIzqDer);
-                            }
-                        }
-                    }
-                    i++;
-                    j++;
-                }
-            }
-        }
-
-        /* Cuenta secuencia en diagonal inferior de matriz(IZQ a DER)
-        *
-        *   Ej:     - - - - -
-        *           - - - - X
-        *           - - - X X
-        *           - - X X X
-        *           - X X X X
-        * */
-
-        for (int indI = 1; indI < lenghMatriz; indI++) {
-            j=0;
-            i=indI;
-            if (lenghMatriz-indI>=4) {
-                while (i < lenghMatriz ) {
-                    if (lenghMatriz-i>=4) {
-                        if (arr[i][j] == arr[i+1][j+1] &&
-                            arr[i][j] == arr[i+2][j+2] &&
-                            arr[i][j] == arr[i+3][j+3]
-                        ) {
-                            countSecuenceDiagIzqDer++;
-                            i = i + 3;
-                            j=i;
-                            /* Acelera la busqueda de la solución*/
-                            if (countSecuenceDiagIzqDer>1){
-                                //System.out.println("Secuencias Izq => Der Acel: "+  countSecuenceDiagIzqDer);
-                                //return (countSecuenceDiagIzqDer);
-                            }
-                        }
-                    }
-                    i++;
-                    j++;
-                }
-            }
-        }
-        System.out.println("Secuencias Izq => Der : " + countSecuenceDiagIzqDer);
-        return countSecuenceDiagIzqDer;
-    }
-
-    /* Cuenta secuencia Diag DER => IZQ */
-    static int countSecuenceDiagDerIzq (char[][] arr, int lenghMatriz){
-        int i;
-        int j;
-        int countSecuenceDiagDerIzq=0;
-
-        /* Cuenta secuencia en diagonal superior de matriz de Derecha a IZQ (como se visualizan las X)
-        *
-        *     Ej:   X X X X X
-        *           - X X X X
-        *           - - X X X
-        *           - - - X X
-        *           - - - - X
-        * */
-        for (int indJ = lenghMatriz-1; indJ >= 0; indJ--) {
-            i=0;
-            j=indJ;
-            //System.out.println ("Indice indJ: " + indJ);
-            if (indJ>=3) {
-                while (j >= 0) {
-                    //System.out.println ("Indice I: " + (lenghMatriz-i) + "Indice J: "+ (lenghMatriz-j));
-                    if (lenghMatriz-j<=4) {
-
-
-                        if (arr[i][j] == arr[i+1][j-1] &&
-                            arr[i][j] == arr[i+2][j-2] &&
-                            arr[i][j] == arr[i+3][j-3]
-                        ) {
-                            countSecuenceDiagDerIzq++;
-                            i=i+3;
-                            j=j-3 ;
-                            // Acelera la busqueda de la solución
-                            if (countSecuenceDiagDerIzq>1){
-                                //System.out.println("Secuencias Der => Izq Acel: "+  countSecuenceDiagDerIzq);
-                                //return (countSecuenceDiagDerIzq);
-                            }
-                        }
-
-                        //System.out.println("Val: "+ arr[i][j]  +"["+i+","+j+ "] => i: "+(lenghMatriz-i) +" j: "+ (lenghMatriz-j));
-                    }
-                    i++;
-                    j--;
-                }
-                //System.out.println("");
-            }
-        }
-
-        /* Cuenta secuencia en diagonal inferior de matriz (DER a IZQ)
-        *
-        *      Ej:  - - - - -
-        *           X - - - -
-        *           X X - - -
-        *           X X X - -
-        *           X X X X -
-        * */
-        for (int indI=1; indI<=lenghMatriz-1; indI++) {
-            i=indI;
-            j=lenghMatriz-1;
-
-            //System.out.println("indI"+(lenghMatriz-indI));
-            if (lenghMatriz-indI>=4) {
-                while (i <= lenghMatriz-1) {
-                    if (lenghMatriz-i>=4) {
-
-                        if (arr[i][j] == arr[i+1][j-1] &&
-                                arr[i][j] == arr[i+2][j-2] &&
-                                arr[i][j] == arr[i+3][j-3]
-                        ) {
-                            countSecuenceDiagDerIzq++;
-                            i=i+3;
-                            j=j-3;
-                            // Acelera la busqueda de la solución
-                            if (countSecuenceDiagDerIzq>1){
-                                //System.out.println("Secuencias Der => Izq Acel: "+  countSecuenceDiagDerIzq);
-                                //return (countSecuenceDiagDerIzq);
-                            }
-                        }
-                        //System.out.println("Val: "+ arr[i][j]);
-                    }
-                    i++;
-                    j--;
-                }
-                //System.out.println("");
-            }
-        }
-        System.out.println("Secuencias  Der => Izq: " + countSecuenceDiagDerIzq);
-        return countSecuenceDiagDerIzq;
-    }
-
-    /* busca diagonal de IZQ a DER*/
+    /* Busca secuancia diagonal de IZQ a DER*/
     static int searchDiagIzqDer(char[][] arr, int lenghMatriz, int i, int j, String indLimit){
         int contSecuencia =0;
         int limit=0;
@@ -299,7 +133,8 @@ public class Mutant {
         return contSecuencia;
     }
 
-    static int countSecuenceDiagIzqDer2 (char[][] arr, int lenghMatriz){
+    /* Cuenta secuencia de forma diagonal Izquierda a Derecha */
+    static int countSecuenceDiagIzqDer (char[][] arr, int lenghMatriz){
         int i=0;
         int j=0;
         int countSecuence=0;
@@ -324,7 +159,7 @@ public class Mutant {
         return countSecuence;
     }
 
-    /* busca diagonal de DER a IZq*/
+    /* Busca secuencia diagonal de DER a IZq*/
     static int searchDiagDerIzq(char[][] arr, int lenghMatriz, int i, int j, String indLimit){
         int contSecuencia =0;
         int limit=0;
@@ -349,7 +184,8 @@ public class Mutant {
         return contSecuencia;
     }
 
-    static int countSecuenceDiagDerIzq2 (char[][] arr, int lenghMatriz){
+    /* Cuenta secuencia de forma diagonal Derecha a Izquierda */
+    static int countSecuenceDiagDerIzq (char[][] arr, int lenghMatriz){
         int i=0;
         int j=0;
         int countSecuence=0;
@@ -417,8 +253,8 @@ public class Mutant {
             //return true;
         }
 
-        int restultado = countSecuenceDiagIzqDer2(arr, lenghMatriz);
-        int resultado2 = countSecuenceDiagDerIzq2(arr, lenghMatriz);
+        //int restultado = countSecuenceDiagIzqDer2(arr, lenghMatriz);
+        //int resultado2 = countSecuenceDiagDerIzq2(arr, lenghMatriz);
 
 
         return false;
