@@ -74,7 +74,7 @@ Los siguientes casos fueron probados en las pruebas
 
 |Caso 1 = true | Caso 2 = true | Caso 3 = true | Caso 4 = true |
 |---|---|---|
-| <img src="img/traza_caso1.png" width="100"/> | ![](img/traza_caso2.png =100x100) | ![](img/traza_caso3.png =100x100) | ![](img/traza_caso4.png =100x100) |
+| <img src="img/traza_caso1.png" width="100"/> | <img src="img/traza_caso2.png" width="100"/> | <img src="img/traza_caso3.png" width="100"/> | <img src="img/traza_caso4.png" width="100"/> |
 |Caso 5 = true| Caso 6 = true | Caso 7 = true | Caso 8 = false |
 | ![](img/traza_caso5.png =100x100) | ![](img/traza_caso6.png =100x100) | ![](img/traza_caso7.png =100x100) | ![](img/traza_caso8.png =100x100) |
 | Caso 9 = false | Caso 10 = false | Caso 11 = false | Caso 12 = true |
