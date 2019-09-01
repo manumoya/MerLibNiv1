@@ -41,6 +41,7 @@ Usar programación dinámica para dividir en subproblemas, es decir,
 * En cada posición que resuelva una secuancia, evaluar si llegó a la solución final.
 
 ### Consideraciones
+Bla bla
 
 ### Descripción del programa
 
@@ -56,7 +57,7 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 * **main(String[] args)**: Métodos principal de la ejecución del programa.
 
 ### Ejecución del programa
-
+Bla bla
 
 ### Análisis del programa
 * La solución se comporta según lo esperado para todos los casos de pruebas utilizados.
