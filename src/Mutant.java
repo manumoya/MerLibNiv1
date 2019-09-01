@@ -43,7 +43,6 @@ public class Mutant {
     }
     */
 
-
     /* Print matriz con DNA */
     static void printMatriz (char[][] arr, int largoMatriz){
         //int lenghMatriz = dna.length;
@@ -54,7 +53,6 @@ public class Mutant {
             System.out.println();
         }
     }
-
 
     /* Cuenta secuencia Horizontal*/
     static int countSecuenceHoriz (char[][] arr, int lenghMatriz){
@@ -155,7 +153,7 @@ public class Mutant {
                 countSecuence = countSecuence + cont;
             }
             // Acelera busqueda de solución
-            if (countSecuence>1){
+            if (countSecuence > 1){
                 //System.out.println("Cont Sec IZQ a DER 2 Acel = "+ countSecuence);
                 return countSecuence;
             }
@@ -212,7 +210,7 @@ public class Mutant {
             }
 
             // Acelera busqueda de solución
-            if (countSecuence>1){
+            if (countSecuence > 1){
                 // System.out.println("Cont Sec DER a IZQ 2 Acel = "+ countSecuence);
                 return countSecuence;
             }
@@ -261,11 +259,11 @@ public class Mutant {
         /* Evalúa secuencia horizontal + vertical + diagonal IZQ => DER + diagonal DER => IZQ */
         int totalSecuenceDiagDerIzq=0;
         totalSecuenceDiagDerIzq = countSecuenceDiagDerIzq(arr, lenghMatriz);
-        if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer+totalSecuenceDiagIzqDer)>1){
+        if ((totalSecuenceHoriz+totSecuenceVert+totalSecuenceDiagIzqDer+totalSecuenceDiagDerIzq)>1){
             return true;
         }
 
-        // Si noencuntra secuencia mutante
+        // Si no encuntra secuencia mutante
         return false;
     }
 
