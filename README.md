@@ -20,7 +20,7 @@ cuales representa cada base nitrogenada del ADN.
 * En este caso el llamado a la función isMutant(dna) devuelve “true”.
 * Desarrolla el algoritmo de la manera más eficiente posible.
 
-### Entregablea
+### Entregables
 
 * Programa (java 7) que cumpla con el método solicitado.
 * Programa de pruebas unitarias automáticas (JUnit 4).
@@ -41,8 +41,8 @@ Usar programación dinámica para dividir en subproblemas, es decir:
 * Recorrer toda la matriz y evaluar secuencias de adn (horizontal, vertica o diagonal) para cada posición.
 * En cada posición que resuelva una secuencia, evaluar si llegó a la solución final.
 
-### Consideraciones
-Bla bla
+### Supuestos
+* La secuencia de ADN se ingresará por línea de comando.
 
 ### Descripción del programa
 
@@ -59,6 +59,9 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 * **isMutant(String[] dna)**: Evalúa si la secuencia de ADN es mutante o no.
 * **main(String[] args)**: Método principal de la ejecución del programa.
 
+Las pruebas unitarias se encuentran en el archivos [MutantTest.java](https://github.com/manumoya/MerLibNiv1/blob/master/src/MutantTest.java), el cual contiene los siguientes métodos.
+
+
 ### Análisis del programa
 * La solución se comporta según lo esperado para todos los casos de pruebas utilizados.
 * La complejidad de cada método es la que se indica a continuación, donde nxn = n^2
@@ -72,7 +75,7 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 | Encontrar secuencias diagonales Der. a Izq. | countSecuenceDiagDerIzq() | n^2 |
 
 * Por lo anterior la complejidad es: n^2 + n^2 + n^2 + n^2 + n^2 = 5n^2 = O(n^2). Logrando complejidad polinomial, que para este caso es cuadrática.
-* **Observaciones**: La complejidad de searchDiagIzqDer() está incluida en countSecuenceDiagIzqDer() y la de searchDiagDerIzq() está incluida en countSecuenceDiagDerIzq()
+* **Observaciones**: La complejidad de searchDiagIzqDer() está incluida en countSecuenceDiagIzqDer() y la de searchDiagDerIzq() en countSecuenceDiagDerIzq().
 
 ### Traza
 Los siguientes casos fueron probados:
