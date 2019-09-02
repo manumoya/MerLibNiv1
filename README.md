@@ -46,7 +46,7 @@ Usar programación dinámica para dividir en subproblemas, es decir:
 
 ### Descripción del programa
 
-El programa considera un solo archivo llamado [Mutant.java](https://github.com/manumoya/MerLibNiv1/blob/master/src/Mutant.java), el cual contiene los siguientes métodos:
+El programa considera el archivo llamado [Mutant.java](https://github.com/manumoya/MerLibNiv1/blob/master/src/Mutant.java), el cual contiene los siguientes métodos:
 
 * **completeMatriz (char[][] arr, String[] dna )**: LLena la matriz nxn con las secuencias de entrada, validando que sea una matriz correcta.
 * **valideLetter(char [] dnaSimple)**: Valida que las letras sean las correspondientes.
@@ -59,7 +59,7 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 * **isMutant(String[] dna)**: Evalúa si la secuencia de ADN es mutante o no.
 * **main(String[] args)**: Método principal de la ejecución del programa.
 
-Las pruebas unitarias se encuentran en el archivos [MutantTest.java](https://github.com/manumoya/MerLibNiv1/blob/master/src/MutantTest.java).
+Las pruebas unitarias se encuentran en el archivo [MutantTest.java](https://github.com/manumoya/MerLibNiv1/blob/master/src/MutantTest.java).
 
 
 ### Análisis del programa
@@ -98,7 +98,7 @@ Se puede mejorar, entregando a cada análisis la cantidad de secuencia de ADN en
 
 ### Ejecución del programa
 
-* Ingresar a la carpeta donde este el archivo [Mutant.class](https://github.com]manumoya/MerLibNiv1/blob/master/src/Mutant.class)
+* Ingresar a la carpeta donde este el archivo [Mutant.class](https://github.com/manumoya/MerLibNiv1/blob/master/out/production/MerLibNiv1/Mutant.class)
 * Ejecutar la siguiente línea de comando: **java Mutant**
 * El adn debe ser ingresado en el siguiente formato: **ATAAA,AGGGG,ATGGG,AGGGG,CGCGG**
 * Ejemplo:
