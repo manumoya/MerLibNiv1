@@ -132,6 +132,19 @@ public class MutantTest {
 
     @Test
     public void countSecuenceVert() {
+        assertEquals(2, Mutant.countSecuenceVert(arr1, largo1));
+        assertEquals(1, Mutant.countSecuenceVert(arr2, largo2));
+        assertEquals(0, Mutant.countSecuenceVert(arr3, largo3));
+        assertEquals(2, Mutant.countSecuenceVert(arr4, largo4));
+        assertEquals(1, Mutant.countSecuenceVert(arr5, largo5));
+        assertEquals(2, Mutant.countSecuenceVert(arr6, largo6));
+        assertEquals(1, Mutant.countSecuenceVert(arr7, largo7));
+        assertEquals(0, Mutant.countSecuenceVert(arr11, largo11));
+        assertEquals(2, Mutant.countSecuenceVert(arr12, largo12));
+        assertEquals(2, Mutant.countSecuenceVert(arr13, largo13));
+        assertEquals(0, Mutant.countSecuenceVert(arr14, largo14));
+        assertEquals(0, Mutant.countSecuenceVert(arr15, largo15));
+        assertEquals(0, Mutant.countSecuenceVert(arr16, largo16));
     }
 
     @Test
@@ -140,6 +153,19 @@ public class MutantTest {
 
     @Test
     public void countSecuenceDiagIzqDer() {
+        assertEquals(0, Mutant.countSecuenceDiagIzqDer(arr1, largo1));
+        assertEquals(2, Mutant.countSecuenceDiagIzqDer(arr2, largo2));
+        assertEquals(0, Mutant.countSecuenceDiagIzqDer(arr3, largo3));
+        assertEquals(0, Mutant.countSecuenceDiagIzqDer(arr4, largo4));
+        assertEquals(1, Mutant.countSecuenceDiagIzqDer(arr5, largo5));
+        assertEquals(1, Mutant.countSecuenceDiagIzqDer(arr6, largo6));
+        assertEquals(1, Mutant.countSecuenceDiagIzqDer(arr7, largo7));
+        assertEquals(0, Mutant.countSecuenceDiagIzqDer(arr11, largo11));
+        assertEquals(1, Mutant.countSecuenceDiagIzqDer(arr12, largo12));
+        assertEquals(2, Mutant.countSecuenceDiagIzqDer(arr13, largo13));
+        assertEquals(0, Mutant.countSecuenceDiagIzqDer(arr14, largo14));
+        assertEquals(0, Mutant.countSecuenceDiagIzqDer(arr15, largo15));
+        assertEquals(3, Mutant.countSecuenceDiagIzqDer(arr16, largo16));
     }
 
     @Test
