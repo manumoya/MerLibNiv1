@@ -57,24 +57,25 @@ public class MutantTest {
     char[][] arr15 = new char[largo15][largo15];
     char[][] arr16 = new char[largo16][largo16];
 
+    boolean completeMatriz1 =  Mutant.completeMatriz(arr1,dna1);
+    boolean completeMatriz2 =  Mutant.completeMatriz(arr2,dna2);
+    boolean completeMatriz3 =  Mutant.completeMatriz(arr3,dna3);
+    boolean completeMatriz4 =  Mutant.completeMatriz(arr4,dna4);
+    boolean completeMatriz5 =  Mutant.completeMatriz(arr5,dna5);
+    boolean completeMatriz6 =  Mutant.completeMatriz(arr6,dna6);
+    boolean completeMatriz7 =  Mutant.completeMatriz(arr7,dna7);
+    boolean completeMatriz8 =  Mutant.completeMatriz(arr8,dna8);
+    boolean completeMatriz9 =  Mutant.completeMatriz(arr9,dna9);
+    boolean completeMatriz10 =  Mutant.completeMatriz(arr10,dna10);
+    boolean completeMatriz11 =  Mutant.completeMatriz(arr11,dna11);
+    boolean completeMatriz12 =  Mutant.completeMatriz(arr12,dna12);
+    boolean completeMatriz13 =  Mutant.completeMatriz(arr13,dna13);
+    boolean completeMatriz14 =  Mutant.completeMatriz(arr14,dna14);
+    boolean completeMatriz15 =  Mutant.completeMatriz(arr15,dna15);
+    boolean completeMatriz16 =  Mutant.completeMatriz(arr16,dna16);
+
     @Test
     public void completeMatriz() {
-        boolean completeMatriz1 =  Mutant.completeMatriz(arr1,dna1);
-        boolean completeMatriz2 =  Mutant.completeMatriz(arr2,dna2);
-        boolean completeMatriz3 =  Mutant.completeMatriz(arr3,dna3);
-        boolean completeMatriz4 =  Mutant.completeMatriz(arr4,dna4);
-        boolean completeMatriz5 =  Mutant.completeMatriz(arr5,dna5);
-        boolean completeMatriz6 =  Mutant.completeMatriz(arr6,dna6);
-        boolean completeMatriz7 =  Mutant.completeMatriz(arr7,dna7);
-        boolean completeMatriz8 =  Mutant.completeMatriz(arr8,dna8);
-        boolean completeMatriz9 =  Mutant.completeMatriz(arr9,dna9);
-        boolean completeMatriz10 =  Mutant.completeMatriz(arr10,dna10);
-        boolean completeMatriz11 =  Mutant.completeMatriz(arr11,dna11);
-        boolean completeMatriz12 =  Mutant.completeMatriz(arr12,dna12);
-        boolean completeMatriz13 =  Mutant.completeMatriz(arr13,dna13);
-        boolean completeMatriz14 =  Mutant.completeMatriz(arr14,dna14);
-        boolean completeMatriz15 =  Mutant.completeMatriz(arr15,dna15);
-        boolean completeMatriz16 =  Mutant.completeMatriz(arr16,dna16);
 
         assertEquals(true, completeMatriz1);
         assertEquals(true, completeMatriz2);
@@ -113,6 +114,20 @@ public class MutantTest {
 
     @Test
     public void countSecuenceHoriz() {
+
+        assertEquals(2, Mutant.countSecuenceHoriz(arr1, largo1));
+        assertEquals(2, Mutant.countSecuenceHoriz(arr2, largo2));
+        assertEquals(0, Mutant.countSecuenceHoriz(arr3, largo3));
+        assertEquals(2, Mutant.countSecuenceHoriz(arr4, largo4));
+        assertEquals(1, Mutant.countSecuenceHoriz(arr5, largo5));
+        assertEquals(2, Mutant.countSecuenceHoriz(arr6, largo6));
+        assertEquals(1, Mutant.countSecuenceHoriz(arr7, largo7));
+        assertEquals(0, Mutant.countSecuenceHoriz(arr11, largo11));
+        assertEquals(2, Mutant.countSecuenceHoriz(arr12, largo12));
+        assertEquals(2, Mutant.countSecuenceHoriz(arr13, largo13));
+        assertEquals(0, Mutant.countSecuenceHoriz(arr14, largo14));
+        assertEquals(0, Mutant.countSecuenceHoriz(arr15, largo15));
+        assertEquals(0, Mutant.countSecuenceHoriz(arr16, largo16));
     }
 
     @Test
