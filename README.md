@@ -94,7 +94,7 @@ Los cuales se reflejan en el siguiente código:
 
 ### ¿Se puede mejorar?
 
-Se puede mejorar, entregando a cada análisis la cantidad de secuencia de ADN encontrada en el análisis anterior, de esta forma evita hacer procesamiento adicional. Es decir, si existe una secuencia vertical, basta que encuentre una horizonatal (o diagonal) para que sea mutante.
+Se puede mejorar, entregando a cada análisis la cantidad de secuencia de ADN encontrada en el análisis anterior, de esta forma evita hacer procesamiento adicional. Es decir, si existe una secuencia horizontal, basta que encuentre una vertical (o diagonal) para que sea mutante.
 
 ### Ejecución del programa
 Bla bla
