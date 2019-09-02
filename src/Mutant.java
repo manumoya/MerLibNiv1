@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Mutant {
 
     /* Completa matriz con DNA */
@@ -251,8 +249,11 @@ public class Mutant {
         //String[] dna = {"ATAAR","AGGGG","ATGGG","AGGGG","CGCGG"}; // 9
         //String[] dna = {"ATA","AGG","ATG"}; // 10
         //String[] dna = {"CTGATG","ACATTC","CAGTCT","CGAAGA","AGTTAG","TCGCAC"}; // 11
-        String[] dna = {"TAAATCGG","AAAATTTT","TCAGTAGT","GAATTGAT","CCCCGGTT","AAAGTGAG","GAAAAGGG","TCTTTTAG"}; //12
+        //String[] dna = {"TAAATCGG","AAAATTTT","TCAGTAGT","GAATTGAT","CCCCGGTT","AAAGTGAG","GAAAAGGG","TCTTTTAG"}; //12
+        //String[] dna = {"ATGGGATAG","TAGGATGAA","GGCGGTGGA","AACCAATAA","AAAACGGTA","TCTACCGCA","GCACACATG","GCTGTAGTG","CCGGGGGCG"}; //13
+        //String[] dna = {"ATAG","AGGC","ATGT","CGAA"}; // 14
 
+        String[] dna = {"ATAG","AGGC","ATGT","CGAA"}; // 15
         System.out.println ( isMutant(dna) );
 
         /*
