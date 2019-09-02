@@ -22,8 +22,8 @@ cuales representa cada base nitrogenada del ADN.
 
 ### Entregables
 
-* Programa (java 7) que cumpla con el método solicitado.
-* Programa de pruebas unitarias automáticas (JUnit 4).
+* Programa (java 7*) que cumpla con el método solicitado.
+* Programa de pruebas unitarias automáticas (JUnit 4*).
 
 ### Idea principal
 
