@@ -1,6 +1,6 @@
-# Ejercicio MercadoLibre Nivel 1 (Agosto 2019)
+# Ejercicio MeLi Nivel 1 (Agosto 2019)
 ###### Autor: [Manuel Moya - mmoyam@gmail.com]
-El objetivo de este documento es detallar la resolución del caso MercadoLibre, donde se debe diseñar un algortimo que detecte mutantes basados su secuencia de ADN que será entregado.
+El objetivo de este documento es detallar la resolución del caso MeLi Nivel 1, donde se debe diseñar un algortimo que detecte mutantes basados su secuencia de ADN que será entregado.
 
 ### Enunciado
 
@@ -20,9 +20,10 @@ cuales representa cada base nitrogenada del ADN.
 * En este caso el llamado a la función isMutant(dna) devuelve “true”.
 * Desarrolla el algoritmo de la manera más eficiente posible.
 
-### Entregable
+### Entregablea
 
-Programa (java) que cumpla con el método solicitado
+* Programa (java 7) que cumpla con el método solicitado.
+* Programa de pruebas unitarias automáticas (JUnit 4).
 
 ### Idea principal
 
@@ -34,11 +35,11 @@ Programa (java) que cumpla con el método solicitado
 * Solución inspirada en algoritmo goloso (greedy), es decir, cada vez que encuentre una secuencia evaluar si existe una solución, de esta forma logrando eficiencia en el algoritmo.
 * Como la estructura de datos es una matriz NxN, el objetivo es desarrollar el algoritmo con complejidad polinomial, que para este caso es O(n^2)
 
-### Idea secundaria
-Usar programación dinámica para dividir en subproblemas, es decir, 
+### Idea alternativa
+Usar programación dinámica para dividir en subproblemas, es decir: 
 
-* Recorrer toda la matriz y evaluar secuencias de adn (horizontal, vertica o diagonal) para cada posición
-* En cada posición que resuelva una secuancia, evaluar si llegó a la solución final.
+* Recorrer toda la matriz y evaluar secuencias de adn (horizontal, vertica o diagonal) para cada posición.
+* En cada posición que resuelva una secuencia, evaluar si llegó a la solución final.
 
 ### Consideraciones
 Bla bla
@@ -51,10 +52,12 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 * **valideLetter(char [] dnaSimple)**: Valida que las letras sean las correspondientes.
 * **countSecuenceHoriz (char[][] arr, int lenghMatriz)**: Cuenta las secuencias horizontales.
 * **countSecuenceVert (char[][] arr, int lenghMatriz)**: Cuenta las secuencias verticales.
+* **searchDiagIzqDer(char[][] arr, int lenghMatriz, int i, int j, String indLimit)**: Busqueda de todas las secuencias diagonales de izquierda a derecha, dada una posición
 * **countSecuenceDiagIzqDer (char[][] arr, int lenghMatriz)**: Cuenta secuencias diagonales de izquierda a derecha.
+* **searchDiagDerIzq(char[][] arr, int lenghMatriz, int i, int j, String indLimit)**: Busqueda de todas las secuencias diagonales de derecha a izquierda, dada una posición
 * **countSecuenceDiagDerIzq (char[][] arr, int lenghMatriz)**: Cuenta secuencias diagonales de derecha a izquierda.
 * **isMutant(String[] dna)**: Evalúa si la secuencia de ADN es mutante o no.
-* **main(String[] args)**: Métodos principal de la ejecución del programa.
+* **main(String[] args)**: Método principal de la ejecución del programa.
 
 ### Ejecución del programa
 Bla bla
@@ -72,6 +75,7 @@ Bla bla
 | Encontrar secuencias diagonales Der. a Izq. | countSecuenceDiagDerIzq() | n^2 |
 
 * Por lo anterior la complejidad es: n^2 + n^2 + n^2 + n^2 + n^2 = 5n^2 = O(n^2). Logrando complejidad polinomial, que para este caso es cuadrática.
+* **Observaciones**: La complejidad de searchDiagIzqDer() está incluida en countSecuenceDiagIzqDer() y la de searchDiagDerIzq() está incluida en countSecuenceDiagDerIzq()
 
 ### Traza
 Los siguientes casos fueron probados:
