@@ -98,9 +98,9 @@ Se puede mejorar, entregando a cada análisis la cantidad de secuencia de ADN en
 
 ### Ejecución del programa
 
-* Se debe ejecutar lo siguiente por línea de comando: **java Mutant**
-
+* Ingresar a la carpeta donde este el archivo [Mutant.class](https://github.com]manumoya/MerLibNiv1/blob/master/src/Mutant.class)
+* Ejecutar la siguiente línea de comando: **java Mutant**
 * El adn debe ser ingresado en el siguiente formato: **ATAAA,AGGGG,ATGGG,AGGGG,CGCGG**
 * Ejemplo:
 
-	![](img/ejecuta_comando.png)
+* ![](img/ejecuta_comando.png)
