@@ -191,6 +191,22 @@ public class MutantTest {
 
     @Test
     public void isMutant() {
+        assertEquals(true, Mutant.isMutant(dna1));
+        assertEquals(true, Mutant.isMutant(dna2));
+        assertEquals(true, Mutant.isMutant(dna3));
+        assertEquals(true, Mutant.isMutant(dna4));
+        assertEquals(true, Mutant.isMutant(dna5));
+        assertEquals(true, Mutant.isMutant(dna6));
+        assertEquals(true, Mutant.isMutant(dna7));
+        assertEquals(false, Mutant.isMutant(dna8));
+        assertEquals(false, Mutant.isMutant(dna9));
+        assertEquals(false, Mutant.isMutant(dna10));
+        assertEquals(false, Mutant.isMutant(dna11));
+        assertEquals(true, Mutant.isMutant(dna12));
+        assertEquals(true, Mutant.isMutant(dna13));
+        assertEquals(false, Mutant.isMutant(dna14));
+        assertEquals(false, Mutant.isMutant(dna15));
+        assertEquals(true, Mutant.isMutant(dna16));
     }
 
     @Test
