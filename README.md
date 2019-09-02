@@ -103,4 +103,4 @@ Se puede mejorar, entregando a cada análisis la cantidad de secuencia de ADN en
 * El adn debe ser ingresado en el siguiente formato: **ATAAA,AGGGG,ATGGG,AGGGG,CGCGG**
 * Ejemplo:
 
-* ![](img/ejecuta_comando.png)
+	![](img/ejecuta_comando.png)
