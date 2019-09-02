@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Mutant {
 
     /* Completa matriz con DNA */
@@ -236,33 +238,13 @@ public class Mutant {
         return false;
     }
 
+    /* Principal para ejecuación*/
     public static void main(String[] args) {
-
-        //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCCTG","TCACTG"}; // 1
-        //String[] dna = {"ATGAAA","AGGGGC","CTATGG","ACAAGG","CCCCTG","TCACTG"}; // 2
-        //String[] dna = {"ATGAAA","AGAAAG","CAGATG","ACATGA","CCTGCC","TTGATA"}; // 3
-        //String[] dna = {"ATAAAA","AGGGGC","ATATGG","AGAAGG","CCCGTG","TCGATG"}; // 4
-        //String[] dna = {"AAAA","AAAT","AAAG","ACCA"}; // 5
-        //String[] dna = {"ATAAA","AGGGG","ATGGG","AGGGG","CGCTG"}; // 6
-        //String[] dna = {"ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"}; // 7
-        //String[] dna = {"AAAA","AAAT","AAAG"}; // 8
-        //String[] dna = {"ATAAR","AGGGG","ATGGG","AGGGG","CGCGG"}; // 9
-        //String[] dna = {"ATA","AGG","ATG"}; // 10
-        //String[] dna = {"CTGATG","ACATTC","CAGTCT","CGAAGA","AGTTAG","TCGCAC"}; // 11
-        //String[] dna = {"TAAATCGG","AAAATTTT","TCAGTAGT","GAATTGAT","CCCCGGTT","AAAGTGAG","GAAAAGGG","TCTTTTAG"}; //12
-        //String[] dna = {"ATGGGATAG","TAGGATGAA","GGCGGTGGA","AACCAATAA","AAAACGGTA","TCTACCGCA","GCACACATG","GCTGTAGTG","CCGGGGGCG"}; //13
-        //String[] dna = {"ATAG","AGGC","ATGT","CGAA"}; // 14
-
-        String[] dna = {"ATAG","AGGC","ATGT","CGAA"}; // 15
-        System.out.println ( isMutant(dna) );
-
-        /*
         Scanner scan = new Scanner(System.in);
         String inputString = scan.nextLine();
         scan.close();
         // ejemplo inputString = "ATAAA,AGGGG,ATGGG,AGGGG,CGCGG";
         String[] dna = inputString.split(",");
         System.out.println ( isMutant(dna) );
-        */
     }
 }
