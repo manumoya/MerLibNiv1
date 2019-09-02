@@ -59,9 +59,6 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 * **isMutant(String[] dna)**: Evalúa si la secuencia de ADN es mutante o no.
 * **main(String[] args)**: Método principal de la ejecución del programa.
 
-### Ejecución del programa
-Bla bla
-
 ### Análisis del programa
 * La solución se comporta según lo esperado para todos los casos de pruebas utilizados.
 * La complejidad de cada método es la que se indica a continuación, donde nxn = n^2
@@ -93,3 +90,6 @@ Los cuales se reflejan en el siguiente código:
 ### ¿Se puede mejorar?
 
 Se puede mejorar, entregando a cada análisis la cantidad de secuencia de ADN encontrada en el análisis anterior, de esta forma evita hacer procesamiento adicional. Es decir, si existe una secuencia vertical, basta que encuentre una horizonatal (o diagonal) para que sea mutante.
+
+### Ejecución del programa
+Bla bla
