@@ -16,9 +16,12 @@ public class MutantTest {
     String[] dna10 = {"ATA","AGG","ATG"}; // 10
     String[] dna11 = {"CTGATG","ACATTC","CAGTCT","CGAAGA","AGTTAG","TCGCAC"}; // 11
     String[] dna12 = {"TAAATCGG","AAAATTTT","TCAGTAGT","GAATTGAT","CCCCGGTT","AAAGTGAG","GAAAAGGG","TCTTTTAG"}; //12
-    String[] dna13 = {"ATGGGATAG","TAGGATGAA","GGCGGTGGA","AACCAATAA","AAAACGGTA","TCTACCGCA","GCACACATG","GCTGTAGTG","CCGGGGGCG"}; //13
+    String[] dna13 = {"ATGGGATAG","TAGGATGAA","GGCGGTGGA","AACCAATAA","AAAACGGTA","TCTACCGCA","GCACACATG","GCTGTAGTG",
+                       "CCGGGGGCG"}; //13
     String[] dna14 = {"ATAG","AGGC","ATGT","CGAA"}; // 14
     String[] dna15 = {"ATAG","AGGC","ATGT","CGAA"}; // 15
+    String[] dna16 = {"ATGAAAGTAC","TACTGTTGTT","GGACACCCGA","CCTGTAAACG","AAGTGGCCAA","TACAACCGGT",
+                      "GTTGAAACAC","CCACTGATCG","AGTAGTGAGC","AACTCAAGCA"}; // 16
 
     int largo1 = dna1.length;
     int largo2 = dna2.length;
@@ -35,6 +38,7 @@ public class MutantTest {
     int largo13 = dna13.length;
     int largo14 = dna14.length;
     int largo15 = dna15.length;
+    int largo16 = dna16.length;
 
     char[][] arr1 = new char[largo1][largo1];
     char[][] arr2 = new char[largo2][largo2];
@@ -51,6 +55,7 @@ public class MutantTest {
     char[][] arr13 = new char[largo13][largo13];
     char[][] arr14 = new char[largo14][largo14];
     char[][] arr15 = new char[largo15][largo15];
+    char[][] arr16 = new char[largo16][largo16];
 
     @Test
     public void completeMatriz() {
@@ -69,6 +74,8 @@ public class MutantTest {
         boolean completeMatriz13 =  Mutant.completeMatriz(arr13,dna13);
         boolean completeMatriz14 =  Mutant.completeMatriz(arr14,dna14);
         boolean completeMatriz15 =  Mutant.completeMatriz(arr15,dna15);
+        boolean completeMatriz16 =  Mutant.completeMatriz(arr16,dna16);
+
         assertEquals(true, completeMatriz1);
         assertEquals(true, completeMatriz2);
         assertEquals(true, completeMatriz3);
@@ -84,6 +91,7 @@ public class MutantTest {
         assertEquals(true, completeMatriz13);
         assertEquals(true, completeMatriz14);
         assertEquals(true, completeMatriz15);
+        assertEquals(true, completeMatriz16);
     }
 
     @Test
