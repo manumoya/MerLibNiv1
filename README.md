@@ -52,14 +52,14 @@ El programa considera un solo archivo llamado [Mutant.java](https://github.com/m
 * **valideLetter(char [] dnaSimple)**: Valida que las letras sean las correspondientes.
 * **countSecuenceHoriz (char[][] arr, int lenghMatriz)**: Cuenta las secuencias horizontales.
 * **countSecuenceVert (char[][] arr, int lenghMatriz)**: Cuenta las secuencias verticales.
-* **searchDiagIzqDer(char[][] arr, int lenghMatriz, int i, int j, String indLimit)**: Busqueda de todas las secuencias diagonales de izquierda a derecha, dada una posición
+* **searchDiagIzqDer(char[][] arr, int lenghMatriz, int i, int j, String indLimit)**: Busqueda de todas las secuencias diagonales de izquierda a derecha, dada una posición.
 * **countSecuenceDiagIzqDer (char[][] arr, int lenghMatriz)**: Cuenta secuencias diagonales de izquierda a derecha.
-* **searchDiagDerIzq(char[][] arr, int lenghMatriz, int i, int j, String indLimit)**: Busqueda de todas las secuencias diagonales de derecha a izquierda, dada una posición
+* **searchDiagDerIzq(char[][] arr, int lenghMatriz, int i, int j, String indLimit)**: Busqueda de todas las secuencias diagonales de derecha a izquierda, dada una posición.
 * **countSecuenceDiagDerIzq (char[][] arr, int lenghMatriz)**: Cuenta secuencias diagonales de derecha a izquierda.
 * **isMutant(String[] dna)**: Evalúa si la secuencia de ADN es mutante o no.
 * **main(String[] args)**: Método principal de la ejecución del programa.
 
-Las pruebas unitarias se encuentran en el archivos [MutantTest.java](https://github.com/manumoya/MerLibNiv1/blob/master/src/MutantTest.java), el cual contiene los siguientes métodos.
+Las pruebas unitarias se encuentran en el archivos [MutantTest.java](https://github.com/manumoya/MerLibNiv1/blob/master/src/MutantTest.java).
 
 
 ### Análisis del programa
@@ -97,4 +97,10 @@ Los cuales se reflejan en el siguiente código:
 Se puede mejorar, entregando a cada análisis la cantidad de secuencia de ADN encontrada en el análisis anterior, de esta forma evita hacer procesamiento adicional. Es decir, si existe una secuencia horizontal, basta que encuentre una vertical (o diagonal) para que sea mutante.
 
 ### Ejecución del programa
-Bla bla
+
+* Se debe ejecutar lo siguiente por línea de comando: **java Mutant**
+
+* El adn debe ser ingresado en el siguiente formato: **ATAAA,AGGGG,ATGGG,AGGGG,CGCGG**
+* Ejemplo:
+
+	![](img/ejecuta_comando.png)
