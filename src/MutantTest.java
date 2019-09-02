@@ -19,7 +19,7 @@ public class MutantTest {
     String[] dna13 = {"ATGGGATAG","TAGGATGAA","GGCGGTGGA","AACCAATAA","AAAACGGTA","TCTACCGCA","GCACACATG","GCTGTAGTG",
                        "CCGGGGGCG"}; //13
     String[] dna14 = {"ATAG","AGGC","ATGT","CGAA"}; // 14
-    String[] dna15 = {"ATAG","AGGC","ATGT","CGAA"}; // 15
+    String[] dna15 = {"AAAC","AGCT","TCCG","CAAT"}; // 15
     String[] dna16 = {"ATGAAAGTAC","TACTGTTGTT","GGACACCCGA","CCTGTAAACG","AAGTGGCCAA","TACAACCGGT",
                       "GTTGAAACAC","CCACTGATCG","AGTAGTGAGC","AACTCAAGCA"}; // 16
 
@@ -174,6 +174,19 @@ public class MutantTest {
 
     @Test
     public void countSecuenceDiagDerIzq() {
+        assertEquals(0, Mutant.countSecuenceDiagDerIzq(arr1, largo1));
+        assertEquals(0, Mutant.countSecuenceDiagDerIzq(arr2, largo2));
+        assertEquals(4, Mutant.countSecuenceDiagDerIzq(arr3, largo3));
+        assertEquals(1, Mutant.countSecuenceDiagDerIzq(arr4, largo4));
+        assertEquals(1, Mutant.countSecuenceDiagDerIzq(arr5, largo5));
+        assertEquals(1, Mutant.countSecuenceDiagDerIzq(arr6, largo6));
+        assertEquals(0, Mutant.countSecuenceDiagDerIzq(arr7, largo7));
+        assertEquals(0, Mutant.countSecuenceDiagDerIzq(arr11, largo11));
+        assertEquals(1, Mutant.countSecuenceDiagDerIzq(arr12, largo12));
+        assertEquals(0, Mutant.countSecuenceDiagDerIzq(arr13, largo13));
+        assertEquals(0, Mutant.countSecuenceDiagDerIzq(arr14, largo14));
+        assertEquals(1, Mutant.countSecuenceDiagDerIzq(arr15, largo15));
+        assertEquals(0, Mutant.countSecuenceDiagDerIzq(arr16, largo16));
     }
 
     @Test
