@@ -8,11 +8,11 @@ public class Mutant {
         for (int i = 0; i < lenghMatriz; i++) {
             char [] dnaSimple = dna[i].toCharArray();
             if (dnaSimple.length!=lenghMatriz || lenghMatriz<4){
-                System.out.println("Error en matriz DNA!!!! => Debe ser  NxN (N >= 4)");
+                //System.out.println("Error en matriz DNA!!!! => Debe ser  NxN (N >= 4)");
                 return false;
             }
             if (!valideLetter(dnaSimple)){
-                System.out.println("Error en  DNA!!!! => Letras no corresponden (deben ser A, T, C o G)");
+                //System.out.println("Error en  DNA!!!! => Letras no corresponden (deben ser A, T, C o G)");
                 return false;
             }
             arr[i] = dnaSimple;
@@ -200,7 +200,7 @@ public class Mutant {
         }
 
         /* Imprime matriz  */
-        printMatriz(arr, lenghMatriz);
+        //printMatriz(arr, lenghMatriz);
 
         /* ***************************************************
         * EVALUA RESULTADOS PARA DETERMINAR SI ES MUTANTE O NO
@@ -240,6 +240,7 @@ public class Mutant {
 
     /* Principal para ejecuación*/
     public static void main(String[] args) {
+        System.out.println("Ingrese secuencia ADN...");
         Scanner scan = new Scanner(System.in);
         String inputString = scan.nextLine();
         scan.close();
