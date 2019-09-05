@@ -1,4 +1,4 @@
-# Ejercicio MeLi Nivel 1 (Agosto 2019)
+# Ejercicio Mer. Lib. Nivel 1 (Agosto 2019)
 ###### Autor: [Manuel Moya - mmoyam@gmail.com]
 El objetivo de este documento es detallar la resolución del caso Mer. Lib. Nivel 1, donde se debe diseñar un algortimo que detecte mutantes basados su secuencia de ADN que será entregado.
 
